@@ -1,0 +1,64 @@
+import torch
+
+A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])
+print(A)
+
+C = torch.Tensor([1.0, 2.0])
+print(C)
+
+tensor_1 = torch.tensor([[1,2,3,4]])
+tensor_2 = torch.tensor([[5,6,7,8]])
+print(torch.cat([tensor_1,tensor_2],dim=0))
+print(torch.cat([tensor_1,tensor_2],dim=1))
+
+tensor = torch.randn(4,4)
+
+print(tensor)
+print(f'zhuihouhang  :{tensor[0]}')
+print(f'diyilie :{tensor[:,0]}')
+print(f'zuihou :{tensor[...,-1]}')
+tensor[:,1] = 0
+print(tensor)
+
+
+import torch
+t = torch.ones(5)
+n = t.numpy()
+print(t)
+print(n)
+
+
+import torch
+import numpy as np
+data = [[1,2],[3,4]]
+np_array = np.array(data)
+x_np = torch.from_numpy(np_array)
+x_np
+
+
+from PIL import Image
+from torchvision import transforms
+image_path = r'form_tensor.jpg'
+image = Image.open(image_path)
+
+transform = transforms.ToTensor()
+tensor_image = transform(image)
+
+print(type(tensor_image))
+
+
+import torch
+from torchvision import transforms
+from PIL import Image
+
+# 生成随机张量
+tensor_image = torch.randn(3, 224, 224)
+# 将张量转换为图像
+transformed_image = transforms.ToPILImage()(tensor_image)
+# 保存图像的路径
+save_path = r'form_tensor.jpg'
+# 保存图像
+transformed_image.save(save_path)
+
+
+conda env list
